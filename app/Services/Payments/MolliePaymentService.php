@@ -39,8 +39,8 @@ class MolliePaymentService implements PaymentGateway
                 'value'    => number_format($amountInCents / 100, 2, '.', ''),
             ],
             'description' => "Order {$order->order_number}",
-//            'redirectUrl' => config('services.mollie.redirect_url') . '/checkout/success/'.$order->id,
-            'redirectUrl' => config('services.mollie.redirect_url'),
+            'redirectUrl' => config('services.mollie.redirect_url') . '/checkout/success/'.$order->id,
+//            'redirectUrl' => config('services.mollie.redirect_url'),
             'webhookUrl'  => config('services.mollie.webhook_url'),
             'metadata'    => [
                 'order_id' => $order->id,
