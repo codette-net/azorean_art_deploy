@@ -70,6 +70,7 @@ class PaymentController extends Controller
 
     // 4. Redirect klant naar de Mollie-betaalpagina
 
+
       return redirect()->away($checkoutUrl);
 //      return view('shop.redirect', [
 //          'checkoutUrl' => $checkoutUrl,

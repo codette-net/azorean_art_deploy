@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Services\Payments;
 
 use App\Contracts\PaymentGateway;
@@ -34,15 +35,15 @@ class MolliePaymentService implements PaymentGateway
         Log::info("Order items: " . json_encode($order->items->toArray()));
 
         $payment = $this->client->payments->create([
-            'amount'      => [
+            'amount' => [
                 'currency' => $order->currency,
-                'value'    => number_format($amountInCents / 100, 2, '.', ''),
+                'value' => number_format($amountInCents / 100, 2, '.', ''),
             ],
             'description' => "Order {$order->order_number}",
-            'redirectUrl' => config('services.mollie.redirect_url') . '/checkout/success/'.$order->id,
+            'redirectUrl' => config('services.mollie.redirect_url') . '/checkout/success/' . $order->id,
 //            'redirectUrl' => config('services.mollie.redirect_url'),
-            'webhookUrl'  => config('services.mollie.webhook_url'),
-            'metadata'    => [
+            'webhookUrl' => config('services.mollie.webhook_url'),
+            'metadata' => [
                 'order_id' => $order->id,
             ],
         ]);
@@ -73,7 +74,7 @@ class MolliePaymentService implements PaymentGateway
     public function handleWebhook(array $payload): void
     {
         $paymentId = $payload['id'] ?? null;
-        if (! $paymentId) {
+        if (!$paymentId) {
             return;
         }
 
@@ -87,7 +88,7 @@ class MolliePaymentService implements PaymentGateway
             'order_id' => $order?->id,
         ]);
 
-        if (! $order) {
+        if (!$order) {
             return;
         }
 
@@ -97,14 +98,21 @@ class MolliePaymentService implements PaymentGateway
 
             $order->update([
                 'payment_status' => 'paid',
-                'status'         => 'processing',
+                'status' => 'processing',
             ]);
-            // hier mails , stock etc
-            Mail::to($order->customer_email)->send(new OrderConfirmedMail($order));
+
+            try {
+                Mail::to($order->customer_email)->send(new OrderConfirmedMail($order));
+            } catch (\Throwable $e) {
+                Log::error('Order confirmation mail failed', [
+                    'order_id' => $order->id,
+                    'error' => $e->getMessage(),
+                ]);
+            }
         } elseif ($payment->isFailed() || $payment->isExpired()) {
             $order->update([
                 'payment_status' => 'failed',
-                'status'         => 'cancelled',
+                'status' => 'cancelled',
             ]);
         }
     }
