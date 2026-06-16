@@ -102,7 +102,8 @@ class MolliePaymentService implements PaymentGateway
             ]);
 
             try {
-                Mail::to($order->customer_email)->send(new OrderConfirmedMail($order));
+                $recipients = [$order->customer_email, config('mail.from.address')];
+                Mail::to($recipients)->send(new OrderConfirmedMail($order));
             } catch (\Throwable $e) {
                 Log::error('Order confirmation mail failed', [
                     'order_id' => $order->id,
