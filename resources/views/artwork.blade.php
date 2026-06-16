@@ -167,7 +167,6 @@
         </div>
       </section>
     </main>
-  </div>
 
   <script>
       document.getElementById('response-button').addEventListener('click', function () {
@@ -175,6 +174,7 @@
       });
   </script>
 @endsection
+  </div>
 
 @vite(['resources/js/artwork.js'])
 

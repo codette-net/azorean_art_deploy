@@ -21,7 +21,7 @@ class ShippingRatesTable
                 TextColumn::make('weight_from_grams')
                     ->numeric()
                     ->sortable(),
-                TextColumn::make('weight_to_gra,s')
+                TextColumn::make('weight_to_grams')
                     ->numeric()
                     ->sortable(),
                 TextColumn::make('amount_cents')

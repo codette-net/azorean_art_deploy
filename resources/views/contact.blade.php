@@ -89,12 +89,12 @@
                 <button class="button primary" id="response-button">Close</button>
             </div>
         </div>
+
+        <script>
+            document.getElementById('response-button').addEventListener('click', function () {
+                document.querySelector('.response-wrapper').classList.remove('active');
+            });
+        </script>
+
+        @endsection
     </div>
-
-    <script>
-        document.getElementById('response-button').addEventListener('click', function () {
-            document.querySelector('.response-wrapper').classList.remove('active');
-        });
-    </script>
-
-@endsection
