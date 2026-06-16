@@ -39,7 +39,7 @@ class ReservationController extends Controller
      Log::info('before mail sending');
 
      Mail::to(config('mail.from.address'))->send(new ReservationRequestMail($validated));
-
+     
      return redirect('/');
 //     later:  route->with succcess
     }
