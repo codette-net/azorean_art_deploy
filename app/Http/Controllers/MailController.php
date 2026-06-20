@@ -23,7 +23,6 @@ class MailController extends Controller
             'postal_code'=> 'nullable|string',
             'country'    => 'nullable|string',
             'message'    => 'nullable|string',
-            'g-captcha-response.required' => 'required|captcha'
         ]);
 
         $this->validateRecaptcha($request);
