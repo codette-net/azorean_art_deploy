@@ -2,6 +2,10 @@
 
 @section('title', 'Contact us')
 
+@section('scripts')
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+@endsection
+
 @section('content')
     <div class="main-wrappper">
         <main>
@@ -67,8 +71,13 @@
                         </div>
 
                         <div class="field last-field">
-                            {{--                        <p class="errors-msg"></p>--}}
-                            {{--                        <div class="g-recaptcha" data-sitekey="6LfUEvQpAAAAABZlIBzegXpvRMnnVGGwtCKaUMZ2"></div>--}}
+                            <div class="field">
+                                <div class="g-recaptcha" data-sitekey="{{ config('services.recaptcha.site_key') }}"></div>
+
+                                @error('g-recaptcha-response')
+                                <p class="error-msg">{{ $message }}</p>
+                                @enderror
+                            </div>
                             <ul class="actions">
                                 <li><input type="submit" value="Send Message" class="button primary"/></li>
                                 <li><input type="reset" value="Clear" class="clear-form"/></li>
