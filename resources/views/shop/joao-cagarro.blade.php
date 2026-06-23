@@ -206,7 +206,8 @@
                         Select your preferred language version, enter your shipping details and continue to secure
                         payment.
                     </p>
-                    <img src="{{ asset('/photos/Cagarro Logo 2025-small.png') }}" alt="João Cagarro logo" class="joao-logo">
+                    <img src="{{ asset('/photos/Cagarro Logo 2025-small.png') }}" alt="João Cagarro logo"
+                         class="joao-logo">
                 </header>
                 <form class="shop-checkout-form" action="{{ route('checkout.store',[], false) }}" method="POST">
                     @csrf
@@ -220,32 +221,40 @@
                         </div>
 
                         @foreach ($product->variants as $variant)
-                            <div class="field half field-border">
-                                <div class="field half">
-                                    <input
-                                        type="checkbox"
-                                        id="variant-{{ $variant->id }}"
-                                        name="variant_ids[]"
-                                        value="{{ $variant->id }}"
-                                        {{ in_array($variant->id, old('variant_ids', [])) ? 'checked' : '' }}
-                                    >
+                            <div class="field field-border">
+                                <div class="field qty-field">
+                                    <input type="hidden" name="quantity[{{ $variant->id }}]" value="0">
+                                    <p>{{$variant->title }}</p>
+                                    <button type="button" class="button icon circle qty-minus">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                             stroke-linecap="round" stroke-linejoin="round"
+                                             class="icon icon-tabler icons-tabler-outline icon-tabler-minus">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                            <path d="M5 12l14 0"/>
+                                        </svg>
+                                    </button>
 
-                                    <label for="variant-{{ $variant->id }}">
-                                        {{ $variant->title }}<br>
-                                        <span>€{{ number_format($variant->price_cents / 100, 2) }}</span>
-                                    </label>
-                                </div>
-
-                                <div class="field quarter">
-                                    <label for="quantity-{{ $variant->id }}">Quantity</label>
                                     <input
                                         type="number"
-                                        id="quantity-{{ $variant->id }}"
                                         name="quantity[{{ $variant->id }}]"
                                         value="{{ old('quantity.' . $variant->id, 0) }}"
                                         min="0"
-                                        max="10"
+                                        step="1"
+                                        inputmode="numeric"
+                                        class="qty-input"
                                     >
+
+                                    <button type="button" class="button icon circle qty-plus">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                             stroke-linecap="round" stroke-linejoin="round"
+                                             class="icon icon-tabler icons-tabler-outline icon-tabler-plus">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                            <path d="M12 5l0 14"/>
+                                            <path d="M5 12l14 0"/>
+                                        </svg>
+                                    </button>
                                 </div>
                             </div>
                         @endforeach
@@ -325,7 +334,8 @@
                             <label for="shipping_zone_ID">Shipping Zone:</label>
                             <select id="shipping_zone_id" name="shipping_zone_id">
                                 @foreach (\App\Models\ShippingZone::where('is_active', true)->get() as $zone)
-                                    <option value="{{ $zone->id }}" {{ old('shipping_zone_id') == $zone->id ? 'selected' : '' }}>
+                                    <option
+                                        value="{{ $zone->id }}" {{ old('shipping_zone_id') == $zone->id ? 'selected' : '' }}>
                                         {{ $zone->name }}
                                     </option>
                                 @endforeach
@@ -346,5 +356,68 @@
 
             </section>
         </main>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
 
+        document.querySelectorAll('.qty-field').forEach(selector => {
+
+            const input = selector.querySelector('.qty-input');
+            const minus = selector.querySelector('.qty-minus');
+            const plus = selector.querySelector('.qty-plus');
+
+            minus.addEventListener('click', () => {
+                let value = parseInt(input.value, 10);
+
+                if (isNaN(value)) {
+                    value = 0;
+                }
+
+                input.value = Math.max(0, value - 1);
+                input.dispatchEvent(new Event('change'));
+            });
+
+            plus.addEventListener('click', () => {
+                let value = parseInt(input.value, 10);
+
+                if (isNaN(value)) {
+                    value = 0;
+                }
+
+                input.value = value + 1;
+                input.dispatchEvent(new Event('change'));
+            });
+
+            input.addEventListener('input', () => {
+
+                // allow empty when typing
+                if (input.value === '') {
+                    return;
+                }
+
+                let value = parseInt(input.value, 10);
+
+                if (isNaN(value) || value < 0) {
+                    input.value = 0;
+                }
+            });
+
+            input.addEventListener('blur', () => {
+
+                // if user leaves an empy field
+                if (input.value.trim() === '') {
+                    input.value = 0;
+                    return;
+                }
+
+                let value = parseInt(input.value, 10);
+
+                if (isNaN(value) || value < 0) {
+                    input.value = 0;
+                }
+            });
+
+        });
+
+    });
+</script>
 @endsection

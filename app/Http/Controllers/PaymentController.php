@@ -30,7 +30,7 @@ class PaymentController extends Controller
           }
         },
       ],
-      'quantity.*'             => 'integer|min:0',
+      'quantity.*'             => 'nullable|integer|min:0',
       'customer_name'          => 'required|string',
       'customer_email'         => 'required|email',
       'shipping_address_line_1' => 'required|string',
