@@ -27,7 +27,7 @@ Route::post('/artwork/contact', [MailController::class,'artworkSend'])->name('ar
 
 
 Route::get('/joao-cagarro', [ShopController::class, 'show'])->name('joao-cagarro');
-Route::get('/joao-cagarro-pt', [ShopController::class, 'show'])->name('joao-cagarro-pt');
+Route::get('/joao-cagarro-pt', [ShopController::class, 'showPT'])->name('joao-cagarro-pt');
 
 // order status
 Route::get('/order-status/{order:order_number}', [OrderStatusController::class, 'show'])->name('shop.order-status');
