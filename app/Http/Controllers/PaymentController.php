@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Contracts\PaymentGateway;
+use App\Mail\CheckoutEmailVerificationMail;
 use App\Models\Order;
 use App\Services\Orders\CheckoutOrderService;
+use chillerlan\QRCode\Decoder\Binarizer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class PaymentController extends Controller
 {
@@ -66,9 +69,14 @@ class PaymentController extends Controller
                 ->withInput();
         }
 
-        $checkoutUrl = $this->payments->createPayment($order, $order->total_cents);
+//        $checkoutUrl = $this->payments->createPayment($order, $order->total_cents);
+//
+//        return redirect()->away($checkoutUrl);
+        Mail::to($order->customer_email)
+            ->send(new CheckoutEmailVerificationMail($order));
 
-        return redirect()->away($checkoutUrl);
+        return view('checkout.verify-email-sent', compact('order'));
+
     }
 
     public function success(Order $order)

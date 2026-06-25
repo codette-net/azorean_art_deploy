@@ -1586,3 +1586,7 @@ body.artwork-view {
     font-size: 0.9rem;
 
 }
+
+.main-checkout section strong {
+    color: hsl(var(--accent-9));
+}

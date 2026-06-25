@@ -12,6 +12,7 @@ class ProductFactory extends Factory
 
     public function definition(): array
     {
+
         $title = $this->faker->randomElement([
             'João Cagarro and the Secret of Santa Bárbara',
             'Cagarro Art Print',

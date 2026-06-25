@@ -17,6 +17,7 @@ class Order extends Model
         'payment_reference', // e.g., Mollie payment ID
         'customer_name',
         'customer_email',
+        'customer_email_verified_at',
         'customer_phone',
         'shipping_name',
         'shipping_address_line_1',

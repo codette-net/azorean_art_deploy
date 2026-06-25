@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CheckoutEmailVerificationController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\OrderStatusController;
 use App\Http\Controllers\ReservationController;
@@ -31,7 +32,10 @@ Route::get('/joao-cagarro-pt', [ShopController::class, 'show'])->name('joao-caga
 // order status
 Route::get('/order-status/{order:order_number}', [OrderStatusController::class, 'show'])->name('shop.order-status');
 
-
+// verify email
+Route::get('/checkout/orders/{order}/verify-email', CheckoutEmailVerificationController::class)
+->name('checkout.verify-email')
+    ->middleware('signed');
 Route::post('/checkout', [PaymentController::class, 'checkout'])->name('checkout.store');
 Route::get('/checkout/success/{order}', [PaymentController::class, 'success'])->name('checkout.success');
 Route::get('/checkout/cancel/{order}', [PaymentController::class, 'cancel'])->name('checkout.cancel');

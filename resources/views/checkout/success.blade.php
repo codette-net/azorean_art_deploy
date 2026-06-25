@@ -36,7 +36,7 @@
                   </a>
 
                   <a href="{{ route('joao-cagarro') }}"
-                     class="button secondary">
+                     class="button primary">
                       Back to João Cagarro
                   </a>
 
