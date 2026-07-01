@@ -70,7 +70,7 @@
 
 
     <div class="main-nav-wrapper">
-      <a href="index.html" class="nav-logo" aria-label="Go to homepage">Azorean<span
+      <a href="/" class="nav-logo" aria-label="Go to homepage">Azorean<span
           class="sr-only">Art</span><span>r</span><span>t</span></a>
       <ul>
         <li><a href="{{ route('home') }}" aria-label="Go to homepage">Home</a></li>
