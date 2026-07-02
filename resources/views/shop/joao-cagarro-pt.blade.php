@@ -12,7 +12,8 @@
                 <a href="{{ route('joao-cagarro')  }}" class="lang-link" aria-label="Switch to English version"
                    title="Switch to English version">EN</a>
                 <span class="lang-separator">|</span>
-                <a href="{{ route('joao-cagarro-pt')  }}" class="lang-link active" aria-label="Mudar para a versão em português"
+                <a href="{{ route('joao-cagarro-pt')  }}" class="lang-link active"
+                   aria-label="Mudar para a versão em português"
                    title="Mudar para a versão em português">PT</a>
             </div>
             <section class="hero-joao gradient-darkpurple-overlay">
@@ -22,7 +23,8 @@
                     <h1 class="product-title">João Cagarro e o Segredo de Santa Bárbara</h1>
                     <p class="product-subtitle">
                         Um romance gráfico cheio de mistério, passado em São Jorge, onde a história da ilha,
-                        as grutas escondidas, os documentos perdidos e o Oceano Atlântico se juntam numa história açoriana
+                        as grutas escondidas, os documentos perdidos e o Oceano Atlântico se juntam numa história
+                        açoriana
                         inesquecível.
                     </p>
                     <div class="hero-actions">
@@ -55,25 +57,32 @@
                 <div class="rj-box">
                     <div class="content-main">
                         <p>
-                            <strong>João Cagarro e o Segredo de Santa Bárbara</strong> acompanha João, um cagarro algo desastrado, mas
+                            <strong>João Cagarro e o Segredo de Santa Bárbara</strong> acompanha João, um cagarro algo
+                            desastrado, mas
                             aventureiro, e a sua amiga Maria na ilha de São Jorge, nos Açores.
                         </p>
 
                         <p>
-                            Quando um homem misterioso quase morre durante um mergulho noturno perigoso, João e Maria descobrem um
-                            rasto de pistas: uma carteira perdida, documentos antigos e um mapa escondido. A investigação leva-os a
-                            uma gruta secreta, por baixo da Igreja de Santa Bárbara, e a um mistério com séculos de história,
+                            Quando um homem misterioso quase morre durante um mergulho noturno perigoso, João e Maria
+                            descobrem um
+                            rasto de pistas: uma carteira perdida, documentos antigos e um mapa escondido. A
+                            investigação leva-os a
+                            uma gruta secreta, por baixo da Igreja de Santa Bárbara, e a um mistério com séculos de
+                            história,
                             envolvendo povoadores flamengos, naufrágios e tesouros escondidos.
                         </p>
 
                         <p>
-                            À medida que mergulham nas profundezas do oceano e do passado, percebem que não estão sozinhos. Há mais
+                            À medida que mergulham nas profundezas do oceano e do passado, percebem que não estão
+                            sozinhos. Há mais
                             alguém à procura do segredo... e disposto a tudo para o obter.
                         </p>
 
                         <p>
-                            Tendo como pano de fundo as paisagens impressionantes de São Jorge, esta história ilustrada junta ambiente
-                            açoriano, aventura e imaginação histórica num livro cultural único para leitores, visitantes e amantes das
+                            Tendo como pano de fundo as paisagens impressionantes de São Jorge, esta história ilustrada
+                            junta ambiente
+                            açoriano, aventura e imaginação histórica num livro cultural único para leitores, visitantes
+                            e amantes das
                             ilhas.
                         </p>
                     </div>
@@ -94,7 +103,8 @@
                             <h3>Encomendar o livro</h3>
 
                             <p>
-                                Escolha a edição de capa mole em inglês ou português, ou ambas, e faça a sua encomenda online.
+                                Escolha a edição de capa mole em inglês ou português, ou ambas, e faça a sua encomenda
+                                online.
                             </p>
 
                             <ul class="info-list alt">
@@ -128,7 +138,8 @@
                     <article class="feature-card">
                         <h3>Passado em São Jorge</h3>
                         <p>
-                            Das Velas a Santa Bárbara, passando pela paisagem costeira da ilha, a história está profundamente ligada
+                            Das Velas a Santa Bárbara, passando pela paisagem costeira da ilha, a história está
+                            profundamente ligada
                             a lugares reais dos Açores.
                         </p>
                     </article>
@@ -136,7 +147,8 @@
                     <article class="feature-card">
                         <h3>História e ficção</h3>
                         <p>
-                            O livro inspira-se na história da ilha, nas antigas rotas marítimas, nas ligações flamengas e nas lendas
+                            O livro inspira-se na história da ilha, nas antigas rotas marítimas, nas ligações flamengas
+                            e nas lendas
                             escondidas no passado atlântico.
                         </p>
                     </article>
@@ -144,7 +156,8 @@
                     <article class="feature-card">
                         <h3>Arte de Pieter Adriaans</h3>
                         <p>
-                            Criado no universo mais alargado da Azorean Art, este projecto combina narrativa visual, identidade local
+                            Criado no universo mais alargado da Azorean Art, este projecto combina narrativa visual,
+                            identidade local
                             e um forte sentido de lugar.
                         </p>
                     </article>
@@ -160,14 +173,16 @@
                     <div class="audience-card">
                         <h3>Visitantes dos Açores</h3>
                         <p>
-                            Uma recordação ilustrada com significado, vinda de São Jorge — algo entre romance gráfico, lembrança
+                            Uma recordação ilustrada com significado, vinda de São Jorge — algo entre romance gráfico,
+                            lembrança
                             cultural e objecto artístico.
                         </p>
                     </div>
                     <div class="audience-card">
                         <h3>Famílias açorianas no estrangeiro</h3>
                         <p>
-                            Uma história de lugar, memória e identidade insular para açorianos e descendentes que vivem nos Estados
+                            Uma história de lugar, memória e identidade insular para açorianos e descendentes que vivem
+                            nos Estados
                             Unidos,
                             no Canadá e noutros países.
                         </p>
@@ -175,7 +190,8 @@
                     <div class="audience-card">
                         <h3>Amantes da história insular</h3>
                         <p>
-                            Ideal para leitores atraídos pelo Atlântico, pelo folclore, pela descoberta, pelas grutas escondidas e
+                            Ideal para leitores atraídos pelo Atlântico, pelo folclore, pela descoberta, pelas grutas
+                            escondidas e
                             pelo mistério histórico.
                         </p>
                     </div>
@@ -186,7 +202,8 @@
                     <p class="eyebrow">Comprar o livro</p>
                     <h2>Encomendar João Cagarro</h2>
                     <p>
-                        Selecione a versão no idioma pretendido, introduza os dados de envio e continue para o pagamento seguro.
+                        Selecione a versão no idioma pretendido, introduza os dados de envio e continue para o pagamento
+                        seguro.
                     </p>
                     <img src="{{ asset('/photos/Cagarro Logo 2025-small.png') }}" alt="Logótipo João Cagarro"
                          class="joao-logo">
@@ -329,7 +346,8 @@
                             <label for="shipping_zone_id">Zona de envio:</label>
                             <select id="shipping_zone_id" name="shipping_zone_id">
                                 @foreach ($shippingZones as $zone)
-                                    <option value="{{ $zone->id }}" {{ old('shipping_zone_id') == $zone->id ? 'selected' : '' }}>
+                                    <option
+                                        value="{{ $zone->id }}" {{ old('shipping_zone_id') == $zone->id ? 'selected' : '' }}>
                                         {{ $zone->name }}
                                     </option>
                                 @endforeach
@@ -339,14 +357,15 @@
                         <div class="field last-field">
                             <div class="field">
                                 <ul class="actions">
-                                    <li><input type="submit" value="Continuar para o pagamento" class="button primary"/></li>
+                                    <li><input type="submit" value="Continuar para o pagamento" class="button primary"/>
+                                    </li>
                                     <li><input type="reset" value="Limpar" class="clear-form"/></li>
                                 </ul>
                             </div>
                         </div>
 
-                            <h3>Custos de envio</h3>
                         <div class="field full shipping-rates">
+                            <h3>Custos de envio</h3>
                             @foreach ($shippingZones as $zone)
                                 <p><strong>{{ $zone->name }}</strong></p>
 
