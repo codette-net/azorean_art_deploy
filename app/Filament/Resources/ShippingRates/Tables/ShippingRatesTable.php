@@ -15,7 +15,7 @@ class ShippingRatesTable
     {
         return $table
             ->columns([
-                TextColumn::make('shipping_zone_id')
+                TextColumn::make('shippingZone.name')
                     ->numeric()
                     ->sortable(),
                 TextColumn::make('weight_from_grams')
