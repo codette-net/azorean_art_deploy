@@ -186,7 +186,7 @@ header.main-header {
     background-image: var(--gradient-dark-blurple);
     box-shadow: var(--shadow-elevation-medium);
     z-index: 999;
-    height: min(100%, 28rem);
+    height: 100%;
     width: min(68%, 344px);
     transform: translate3d(-100%, 0px, 0);
     transition: all 350ms ease-in-out;

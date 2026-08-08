@@ -350,8 +350,8 @@
                             </div>
                         </div>
 
-                        <div class="field full shipping-rates">
                         <h3>Shipping costs</h3>
+                        <div class="field full shipping-rates">
                             @foreach ($shippingZones as $zone)
                                 <p><strong>{{ $zone->name }}</strong></p>
 
