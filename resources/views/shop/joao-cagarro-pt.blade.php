@@ -373,7 +373,7 @@
                                     @foreach ($zone->shippingRates as $rate)
                                         <li>
                                             Até {{ $rate->weight_to_grams }} gram:
-                                            €{{ $rate }}
+                                            €{{ number_format($rate->amount_cents / 100, 2, ',', '.') }}
                                         </li>
                                     @endforeach
                                 </ul>
